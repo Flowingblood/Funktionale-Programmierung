@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Programmieraufgabe 16</title>
+    </head>
+    <body>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Aufgabenstellung:
+        </h1>
+        <p style="font-family:'Verdana'; font-size: large;">
+			Implementieren Sie eine Funktion mk-mp3-control, die ein Objekt zurückliefert, das die Kontrolleinheit eines MP3-Spielers repräsentiert. (Es sollen aber nicht wirklich Dateien abgespielt werden.) Das Objekt foll folgende Informationen speichern/zurückliefern: Eine Liste, der gespeicherten MP3-Dateien (mit Dateiname und Dauer des Stücks), die Anzahl der Titel, der aktuelle Titel, der gerade abgespielt wird oder vorgewählt ist, den Abspielstatus, also ob derzeit ein Titel (welcher?) abgespielt wird oder stop, wenn kein Titel abgespielt wird. Folgende Botschaften soll das Objekt verstehen: laden: Hinzufügen einer neuen MP3-Datei an das Ende der Titelliste, loeschen: Löschen einer Datei aus der Liste, Übergabe der Nummer des zu löschenden Titels, abspielen/stop: Ändern des Abspielstatus, vor/zurück: Titel erhöhen oder erniedrigen, sind keine Titel vorhanden oder ist das Ende oder 1 erreicht, so wird die Nachricht ignoriert, unbekannte Nachrichten werden ignoriert.
+        </p>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Lösungsansatz:
+        </h1>
+        <p style="font-family:'Verdana'; font-size: large;">
+            Die Aufgabe wurde zusammen mit Sebastian Espei erarbeitet. <br>
+			Der Konstruktor erstellt einen Mp3-Player welcher als Attribute einen Status hat, welche als Zahl dargestellt wird, hierbei hat jede Zahl von 0-2 einen anderen Zustand. Es werden die Musik-Titel in einer Liste gespeichert. Der momentane Musik-Titel und der nächste Titel. Die add-title Funktion fügt einen neuen Musik-Titel zu der Titel-Liste hinzu. Hierbei wird geprüft ob der Übergebene Titel ein Pair ist, da ein Musik-Titel einen Dateinamen und eine Dauer besitzt. Die delete-title löscht einen Musik-Titel aus der Titel-Liste indem ein Index übergeben wird. Dabei wird der Index auf seine richtigkeit überprüft. Die change-status Funktion wechselt den Zustand und überprüft das nur Valide Werte übergeben werden dürfen. Die Funktionen: play, pause und stop nutzen diese change-status Funktion. Die next Funktion, prüft ob es einen nächsten Musik-Titel gibt und wenn ja wird auf diesen gewechselt. Die prev Funktion springt einen Musik-Titel zurück, wenn dieser vorhanden ist. display-status gibt den Momentanen Zustand des Mp3-Players aus und den Momentanen Titel mit deren Attributen. Um diese ganzen Funktionen von ausserhalt des make-mp3 Scopes aufzurufen wird eine dispatch Funktion genutzt, welche einen Funktionsnamen erwartet und diese Funktion zurück gibt. 
+			
+        </p>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Implementierung:
+        </h1>
+
+        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Aufgabe16.png?raw=true">
+
+        <a href="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Aufgabe16.rkt">GitHub</a>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Modultest:
+        </h1>
+
+        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Test16.png?raw=true">
+
+        <a href="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Test16.rkt">GitHub</a>
+
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Programmieraufgabe 15</title>
+    </head>
+    <body>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Aufgabenstellung:
+        </h1>
+        <p style="font-family:'Verdana'; font-size: large;">
+			Schreiben Sie eine Funktion my-length, die die Länge einer Liste zurückgibt und benutzen dazu foldr oder foldl.
+        </p>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Lösungsansatz:
+        </h1>
+        <p style="font-family:'Verdana'; font-size: large;">
+            Bei der Implementierung wird die Funktion my-length mit einer inneren Funktion versehen welche zwei Übergabeparameter haben <br>
+			muss, da die foldr/l Funktion eine Prozedur entgegennimmt welche zwei Parameter hat.<br>
+			Der erste Parameter 'p0' wird hierbei gänzlich ignoriert und es wird nur der zweite Parameter 'counter' verwendet, welcher <br>
+			sich in jedem Funktionsaufruf inkrementiert. Somit wird diese innere Funktion 'my-length-inner', welche den Counter <br>
+			inkrementiert, so oft aufgerufen, wie die Liste an Elementen hat. Somit wird die Länge der Liste ermittelt.
+        </p>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Implementierung:
+        </h1>
+
+        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Aufgabe15.png?raw=true">
+
+        <a href="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Aufgabe15.rkt">GitHub</a>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Modultest:
+        </h1>
+
+        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Test15.png?raw=true">
+
+        <a href="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Test15.rkt">GitHub</a>
+
+    </body>
+</html>
