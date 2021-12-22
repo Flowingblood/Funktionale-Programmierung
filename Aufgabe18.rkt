@@ -1,5 +1,7 @@
 #lang racket
 
-(define (nth-stream n s)
-  (stream->list (for/stream ([i n]) (stream-ref s i)))
-)
+(define (list-to-stream data)
+  (define st (stream))
+  (for ([i (length data)])
+    (set! st (stream-append st (stream (list-ref data i)))))
+  st)

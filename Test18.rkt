@@ -2,10 +2,11 @@
 
 (require rackunit)
 
-(define (nth-stream n s)
-  (stream->list (for/stream ([i n]) (stream-ref s i)))
-)
+(define (list-to-stream data)
+  (define st (stream))
+  (for ([i (length data)])
+    (set! st (stream-append st (stream (list-ref data i)))))
+  st)
 
-(define s (stream 5 9 "10"))
 
-(check-equal? (nth-stream 2 s) (list 5 9))
+(check-equal? (stream? (stream 1 2 3)) (stream? (list-to-stream (list 1 2 3))))
