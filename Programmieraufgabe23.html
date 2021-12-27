@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Programmieraufgabe 22</title>
+        <title>Programmieraufgabe 23</title>
     </head>
     <body>
 
@@ -10,31 +10,33 @@
             Aufgabenstellung:
         </h1>
         <p style="font-family:'Verdana'; font-size: large;">
-			Überführen Sie einige (4-5) Ihrer Programme aus den vorherigen Aufgaben in Typed Racket.
+			Schreiben Sie ein map und ein foldr in Typed Racket.
         </p>
 
         <h1 style="font-family:'Verdana'; font-size: xx-large;">
             Lösungsansatz:
         </h1>
         <p style="font-family:'Verdana'; font-size: large;">
-            Es wurden vor allen Funktionen der Parametertyp und der Rückgabetyp angegeben. In den einzelnen Funktionen mussten die Variablen welche einen internen Scope haben mit deren Datentyp angegeben werden.
+            Die Aufgabe wurde zusammen mit Sebastian Espei erarbeitet. <br>
+			Es wurde die my-reverse Funktion aus einer davorigen Aufgabe kopiert um eine Liste zu umzukehren. Um die 'foldr' Funktion in typed Racket umzusetzen muss über dem Funktionskopf definiert werden, was übergeben werden soll. Hierbei wird eine generischer Datentyp 'T' erstellt. Dieser kann alles sein. Als erster Parameter wird eine Funktion erwartet welche zwei Parameter hat welche T sind und die Funktion muss T zurückgeben. Dann folgt ein T Parameter welcher hierbei der init Wert ist und Liste vom Datentyp T welche von rechts nach links durchlaufen wird. Rückgabe ist hierbei auch wieder vom Typen T. Der einfachheit halber wurde die Liste umgekehrt, sodass man in der Funktion von links nach der rechts die Liste abarbeiten kann, aber trotzdem die Ausführungsreihen folge beim anwenden von 'foldr' von rechts nach links durchläuft. In der For-Schleife welche die Liste durchläuft, werden die letzten beiden Werte in der Liste in eine Variable gespeichert. Daraufhin werden die ersten beiden Elemente aus der Liste entfernt. Die beiden gespeicherten Werte werden in die übergebene Funktion gegeben und von rechts an die Liste hinzugefügt. Diese Iteration wird so lange durchlaufen wie die Länge der Liste-1 ist. Zuletzte wird die Liste welche hierbei übrig bleibt, welche nurnoch einen Wert hat mit car in diesen einzelnen Wert transformiert. <br>
+			Die Map Funktion wird mit zwei generischen Datentypen 'T' und 'G' eingeleitet. Hierbei ist der erste Parameter eine Funktion welche einen Parameter vom Typ 'T' entegegen nimmt und 'G' zurück gibt. 'T' und 'G' können hierbei alle Datentypen einnehmen. Daraufhin wird eine Liste vom Typen 'T' übergeben auf welche dann die Funktion angewendet wird und eine Liste vom Typen 'G' zurückgegeben. In der Map Funktion wird eine leere Liste erzeugt. Nun wird über die übergebene Liste iterriert und in die leere Liste jedes Element aus der übergebenen Liste hinzugefügt nachdem die übergebene Funktion darauf angewendet wurde. Diese Liste wird nun zurück gegeben und ist somit eine Liste vom Typen 'G'. 
         </p>
 
         <h1 style="font-family:'Verdana'; font-size: xx-large;">
             Implementierung:
         </h1>
 
-        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Aufgabe22.png?raw=true">
+        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Aufgabe23.png?raw=true">
 
-        <a href="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Aufgabe22.rkt">GitHub</a>
+        <a href="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Aufgabe23.rkt">GitHub</a>
 
         <h1 style="font-family:'Verdana'; font-size: xx-large;">
             Modultest:
         </h1>
 
-        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Test22.png?raw=true">
+        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Test23.png?raw=true">
 
-        <a href="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Test22.rkt">GitHub</a>
+        <a href="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Test23.rkt">GitHub</a>
 
     </body>
 </html>
