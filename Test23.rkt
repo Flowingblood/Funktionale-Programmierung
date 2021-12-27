@@ -39,4 +39,4 @@
 (displayln (own-foldr / 1 (list 1 2 3 )))
 (displayln "Should be: 3/2")
 (displayln (own-map add1 (list 1 2 3 )))
-(displayln "Should be: (2 3 4)")
+(displayln "Should be (2 3 4)")
