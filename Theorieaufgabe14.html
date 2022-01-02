@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Theorieaufgabe 15</title>
+    </head>
+    <body>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Aufgabenstellung:
+        </h1>
+        <p style="font-family:'Verdana'; font-size: large;">
+			Beschreiben Sie die Unterschiede zwischen thunks und force/delay bei der Verzögerung von Auswertungen. Wann ist das Ergebnis gleich und wann unterscheidet es sich? Für welchen Anwendungszweck würden Sie welche Version einsetzen?
+        </p>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Lösung:
+			Wie schon in Theorieaufgabe 13 erwähnt gibt es bei der einmalig Ausführung gar keinen Unterschied. Das Ergebnis ist gleich und die dauer der Ausführung auch. Wenn die Funktionen keine Seiteneffekte haben und der Input gleich bleibt, bleiben die Ergebnisse auch nach mehreren Aufrufen gleich. Jedoch ist die dauer der Ausführung beim Thunk höher, da das Ergebnis neu berechnet werden muss. Wenn die Funktion Seiteneffekte aufweist oder der Input sich ändert, ist auch die Ausgabe beim Delay anders. Da das Ergbnis nicht neu Berechnet wird. Somit wird Thunk verwendet wenn das Ergbnis immer wieder neu berechnet werden muss und Delay wenn das Ergbnis immer wieder gleich ist.
+        </h1>
+        <p style="font-family:'Verdana'; font-size: large;">
+		
+        </p>
+    </body>
+</html>

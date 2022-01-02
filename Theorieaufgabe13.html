@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Theorieaufgabe 13</title>
+    </head>
+    <body>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Aufgabenstellung:
+        </h1>
+        <p style="font-family:'Verdana'; font-size: large;">
+			Beschreiben Sie den Unterschied zwischen der Nutzung von thunk und den Promises (delay und force).
+        </p>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Lösung:
+        </h1>
+        <p style="font-family:'Verdana'; font-size: large;">
+			Die Funktionen thunk (Delay) und Promises(Force) sind eine Art der gewollten Verzögerung bzw. des wartens. Der Unterschied der beiden Funktionen liegt in der Ausführung. Funktionen welche in einem Thunk gewrappt sind, werden beim Aufruf komplett berechnet. Somit werden bei x-mal Aufrufen auch x-mal berechnet. Der Unterschied ist nun bei Promises, dass die Berechnung nur beim ersten Aufruf stattfindet. Nun wird bei jedem weiteren Aufruf wird das Ergebnis der letzten Ausführung weitergegeben. Somit werden bei x-mal Aufrufen auch nur einmal berechnet. Somit sind Thunks bei häufigen Ausführungen deutlich ineffizienter, da die berechnung jedes mal neu stattfindet, was jedoch auf den Anwendungsfall ankommt.
+        </p>
+    </body>
+</html>

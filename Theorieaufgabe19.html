@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Theorieaufgabe 19</title>
+    </head>
+    <body>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Aufgabenstellung:
+        </h1>
+        <p style="font-family:'Verdana'; font-size: large;">
+			Gegeben sei die folgende Funktion in Typed Racket:
+				<br>(: bar (-> (U Integer Boolean String) Integer))
+				<br>(define (bar x)
+				<br>(cond
+				<br>((number? x) (string-length (number->string x)))
+				<br>(else (string-length x))))
+			Wenn man diese Funktion versucht zu kompilieren, erhält man eine Fehlermeldung vom Type CHecker. Erläutern Sie die Fehlermeldung und korrigieren Sie die Funktion.
+        </p>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Lösung:
+        </h1>
+        <p style="font-family:'Verdana'; font-size: large;">
+			Der generische Typ U kann ein Integer, Boolean oder ein String sein. Jedoch wird in der Cond bedingung erstmal auf eine Number geprüft, welche dann in einen String umgewandelt wird und die Länge dieses Strings wird zurück gegeben. Nun kann U noch ein boolean oder ein String sein und es ist nicht möglich die Funktion "string-length" auf ein Boolean anzuwenden. Somit ist die Lösung, vorher zu Prüfen ob es ein Boolean ist.
+        </p>
+		<br>
+		<h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Lösung des Typenproblems:
+        </h1>
+			<br>
+        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Theorieaufgabe19.png?raw=true">
+		<br>
+		<a href="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Theorieaufgabe19.rkt">GitHub</a>
+		
+    </body>
+</html>
