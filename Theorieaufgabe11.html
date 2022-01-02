@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Theorieaufgabe 11</title>
+    </head>
+    <body>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Aufgabenstellung:
+        </h1>
+        <p style="font-family:'Verdana'; font-size: large;">
+			Beschreiben Sie, wie set! funktioniert. Argumentieren Sie dabei anhand der im Modul eingeführten Konzepte die Umgebungen, Bindungen.
+        </p>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Lösung:
+        </h1>
+        <p style="font-family:'Verdana'; font-size: large;">
+			Laut offizieller Racket Dokumentation wird die set! Funktion mit zwei Parametern aufgerufen. Der erste Parameter gibt die Variable an, an welchen der zweite übergebene Parameter gebunden werden soll. Es wird nun zuerst geprüft ob der zweite Wert ausgewertet werden kann, wenn dies der Fall ist, wird der Wert an die übergeben Variable gebunden. Somit zeigt der Pointer dieser Variable nun auf den neuen Wert. Der Rückgabewert der set! Funktion ist ein "#<void>". Trotz des häufigen vorkommens von set! weist die offizielle Racket davon ab set! zu nutzen. Denn es ist oft sinnvoll Veränderliche zu nutzen.
+        </p>
+		
+		<h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Beispiel von set!:
+        </h1>
+
+        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Theorieaufgabe11.png?raw=true">
+		<br>
+		<a href="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Theorieaufgabe11.rkt">GitHub</a>
+    </body>
+</html>
