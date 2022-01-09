@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Reflexion 2</title>
+    </head>
+    <body>
+
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Was sind Funktionen höherer Ordnung?
+        </h1>
+        <p style="font-family:'Verdana'; font-size: large;">
+			Ein Funktion der höheren Ordnung kann eine Funktion entgegennehmen oder eine Funktion als Rückgabewert zurückgeben. Das Nutzen von Funktionen höherer Ordnung ist in Racket implementiert, aber in anderen Programmiersprachen nicht möglich. In Java ist dies erst möglich mit der Einführung der Lambda Ausdrücke. Der Anwendungsbereich dieser Möglichkeit ist besonders mit Funktionen wie das Currying, Fold, Map und Compose.
+        </p>
+		<br>
+        <h2 style="font-family:'Verdana'; font-size: xx-large;">
+            Currying
+        </h2>
+        <p style="font-family:'Verdana'; font-size: large;">
+            Beim Currying wird eine Funktion mit mehrere Argumenten umgewandelt in eine Reihenfolge von Funktionen mit genau einem Argument. Dies wird umgesetzt, indem die Funktion eine Anzahl n Argumente erwartet. Nun wird das Argument n von der Funktion verarbeitet und gibt eine Funktion zurück, welche n-1 Argumente erwartet. Dies wird iterativ so lange ausgeführt, bis keine Argumente mehr erwartet werden.
+        </p>
+		<br>
+        <h2 style="font-family:'Verdana'; font-size: xx-large;">
+            Fold
+        </h2>
+		<p style="font-family:'Verdana'; font-size: large;">
+			Bei der Fold (R/L) Funktion wird als Übergabe eine anzuwendende Funktion erwartet, ein initial Wert und eine Liste auf, welche die Funktion angewendet wird. Der Unterschied zwischen dem R und L bei Fold ist die Ausführung auf die Liste, ob diese von rechts oder von links startet.
+        </p>
+		<br>
+		<h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Map
+        </h1>
+        <p style="font-family:'Verdana'; font-size: large;">
+			Die Map Funktion gehört zu den simpleren Funktionen, diese nimmt eine Funktion und eine Liste entgegen, hierbei wird die Funktion auf jedes Element aus der Liste einzeln angewendet.
+        </p>
+		<br>
+		<h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Compose
+        </h1>
+		<p style="font-family:'Verdana'; font-size: large;">
+			Die Compose Funktion nimmt eine unbegrenzte Anzahl an Funktionen entgegen und kombiniert diese zu einer einzigen. Diese werden hierbei von rechts nach links ausgeführt. Somit wenn die Compose Funktion mit den Argumenten („func1“, „func2“, „func3“) aufgerufen wird, wird zuerst die Funktion func3 dann func2 und zuletzt func1 aufgerufen.
+        </p>
+		<br>
+		<h2 style="font-family:'Verdana'; font-size: xx-large;">
+            Implementation von Compose
+        </h2>
+		<p style="font-family:'Verdana'; font-size: large;">
+			In der Applicative-Order werden die Parameter welcher einer Funktion übergeben werden, vor dem Aufruf der Funktion geprüft. Somit läuft die Funktion normal durch, wenn alle Parameter existieren und im richtigen Scope stehen, wenn jedoch ein Parameter fehlerhaft ist, da diese nicht existiert oder nicht im zulässigen Scope steht, kommt es zu einem Fehler.
+        </p>
+		
+		<h4 style="font-family:'Verdana'; font-size: xx-large;">
+            Abbildung 1:
+        </h4>
+        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.2/1.png?raw=true">
+		<h4 style="font-family:'Verdana'; font-size: xx-large;">
+            Abbildung 1.1 (Racket):
+        </h4>
+		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.2/1.1.png?raw=true">
+		
+		
+
+    </body>
+</html>
