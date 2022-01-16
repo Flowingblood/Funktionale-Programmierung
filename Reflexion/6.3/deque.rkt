@@ -33,5 +33,3 @@
           ((equal? m 'getLast) getLast)
           (else (error "Function not found!" m))))
   dispatch)
-
-(define d (deque 1 3 5 ))

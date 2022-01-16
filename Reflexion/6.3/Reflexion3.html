@@ -2,60 +2,41 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Reflexion 2</title>
+        <title>Reflexion 3</title>
     </head>
     <body>
 
         <h1 style="font-family:'Verdana'; font-size: xx-large;">
-            Was sind Funktionen höherer Ordnung?
+            Datenstrukturen
         </h1>
         <p style="font-family:'Verdana'; font-size: large;">
-			Ein Funktion der höheren Ordnung kann eine Funktion entgegennehmen oder eine Funktion als Rückgabewert zurückgeben. Das Nutzen von Funktionen höherer Ordnung ist in Racket implementiert, aber in anderen Programmiersprachen nicht möglich. In Java ist dies erst möglich mit der Einführung der Lambda Ausdrücke. Der Anwendungsbereich dieser Möglichkeit ist besonders mit Funktionen wie das Currying, Fold, Map und Compose.
+			In Programmiersprachen gibt es eine große Variation an Datenstrukturen. Im Unterricht haben wie die (Binären)Bäume kennengelernt. Welche in Racket mithilfe von Pairs dargestellt wird. Jedoch gibt es noch viele weitere nutzvolle Datenstrukturen. Racket hat auch weitere Datenstrukturen wie Listen oder auch Warteschlangen (Queues) implementiert. Ich werde im Folgenden die Datenstruktur Deque mit dem bereit erlernten Wissen implementieren. Die Deque ist der Queue und dem Stack sehr ähnlich, diese kombiniert diese. Somit können die Daten am Anfang und am Ende gelesen, hinzugefügt und gelöscht werden können. Zum temporären Speichern der Daten wird als Hilfe die bereit vorhandene Datenstruktur List genutzt. Um dies in einem Objekt-Orientierten-Kontext umzusetzen, werden closures und die dispatch Funktion verwendet. Die Implementierung findet einmal in Racket und einmal in Java statt, da Java meine meist genutzte Programmiersprache ist und somit der Aufwand entgegengestellt werden kann.
         </p>
 		<br>
-        <h2 style="font-family:'Verdana'; font-size: xx-large;">
-            Currying
-        </h2>
-        <p style="font-family:'Verdana'; font-size: large;">
-            Beim Currying wird eine Funktion mit mehrere Argumenten umgewandelt in eine Reihenfolge von Funktionen mit genau einem Argument. Dies wird umgesetzt, indem die Funktion eine Anzahl n Argumente erwartet. Nun wird das Argument n von der Funktion verarbeitet und gibt eine Funktion zurück, welche n-1 Argumente erwartet. Dies wird iterativ so lange ausgeführt, bis keine Argumente mehr erwartet werden.
-        </p>
-		<br>
-        <h2 style="font-family:'Verdana'; font-size: xx-large;">
-            Fold
-        </h2>
-		<p style="font-family:'Verdana'; font-size: large;">
-			Bei der Fold (R/L) Funktion wird als Übergabe eine anzuwendende Funktion erwartet, ein initial Wert und eine Liste auf, welche die Funktion angewendet wird. Der Unterschied zwischen dem R und L bei Fold ist die Ausführung auf die Liste, ob diese von rechts oder von links startet.
-        </p>
-		<br>
-		<h1 style="font-family:'Verdana'; font-size: xx-large;">
-            Map
-        </h1>
-        <p style="font-family:'Verdana'; font-size: large;">
-			Die Map Funktion gehört zu den simpleren Funktionen, diese nimmt eine Funktion und eine Liste entgegen, hierbei wird die Funktion auf jedes Element aus der Liste einzeln angewendet.
-        </p>
-		<br>
-		<h1 style="font-family:'Verdana'; font-size: xx-large;">
-            Compose
-        </h1>
-		<p style="font-family:'Verdana'; font-size: large;">
-			Die Compose Funktion nimmt eine unbegrenzte Anzahl an Funktionen entgegen und kombiniert diese zu einer einzigen. Diese werden hierbei von rechts nach links ausgeführt. Somit wenn die Compose Funktion mit den Argumenten („func1“, „func2“, „func3“) aufgerufen wird, wird zuerst die Funktion func3 dann func2 und zuletzt func1 aufgerufen.
-        </p>
-		<br>
-		<h2 style="font-family:'Verdana'; font-size: xx-large;">
-            Implementation von Compose
-        </h2>
-		<p style="font-family:'Verdana'; font-size: large;">
-			In der Applicative-Order werden die Parameter welcher einer Funktion übergeben werden, vor dem Aufruf der Funktion geprüft. Somit läuft die Funktion normal durch, wenn alle Parameter existieren und im richtigen Scope stehen, wenn jedoch ein Parameter fehlerhaft ist, da diese nicht existiert oder nicht im zulässigen Scope steht, kommt es zu einem Fehler.
-        </p>
-		
 		<h4 style="font-family:'Verdana'; font-size: xx-large;">
             Abbildung 1:
         </h4>
-        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.2/1.png?raw=true">
+        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.3/1.png?raw=true">
 		<h4 style="font-family:'Verdana'; font-size: xx-large;">
             Abbildung 1.1 (Racket):
         </h4>
-		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.2/1.1.png?raw=true">
+		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.3/1.1.png?raw=true">
+		<br>
+        <h1 style="font-family:'Verdana'; font-size: xx-large;">
+            Baum Implementation
+        </h1>
+        <p style="font-family:'Verdana'; font-size: large;">
+            Wir haben im Unterricht eine Art der Implementation von Bäumen in Racket kennengelernt, indem Paare ineinander verschachtelt werden. Mir persönlich hat diese Art der Implementierung nicht gefallen, da diese sehr schnell sehr unübersichtlich wurde, deswegen habe ich eine Eigene Art des Baumes in Racket implementiert. Hierbei kann ein Node Objekt initialisiert werden. Diese enthält einen Wert einen Linken Node und einen Rechten Node. Der Linke und Rechte Node ist standartmäßig leer und kann in der Initialisierung oder später mit Funktionen verändert werden. Man kann alle drei Attribute bearbeiten und bekommen. Somit kann mit dem Node Objekt ein Binärer Baum implementiert werden. Des Weiteren habe ich eine Funktion zu Veranschaulichung des Baumes geschrieben. Diese prüft am Anfang, ob das übergebene Node existiert, wenn ja wird ein Rekursiver Aufruf gestartet, welcher das Level um eins erhöht. Daraufhin wird geprüft, dass das übergebene Level nicht null ist. Wenn es nicht null ist, wird eine „Ebene“ in der höhe des levels-1 gezeichnet und der Wert des Nodes mit einem „Arm“. Wenn das Level Null ist, wird einfach nur der Wert des Nodes ausgegeben. Am ende des If-Statements wird nochmal ein Rekursiver Aufruf gestartet nur diesmal mit dem Linken Element und wieder mit dem Level+1.
+        </p>
+		<br>
+		<h4 style="font-family:'Verdana'; font-size: xx-large;">
+            Abbildung 2:
+        </h4>
+        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.3/2.png?raw=true">
+		<h4 style="font-family:'Verdana'; font-size: xx-large;">
+            Abbildung des Baumes:
+        </h4>
+		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.3/3.png?raw=true">
 		
 		
 
