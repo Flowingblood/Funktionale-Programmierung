@@ -1,0 +1,37 @@
+#lang racket
+
+(define (deque . initValues)
+  (define data initValues) 
+  
+  
+  (define (addFirst e)
+    (set! data (append (list e) data))
+  )
+  (define (addLast e)
+    (set! data (append data (list e)))
+  )
+  (define (removeFirst)
+    (set! data (cdr data))
+  )
+  (define (removeLast)
+    (set! data (reverse (cdr (reverse data))))
+  )
+  (define (getFirst)
+    (car data)
+  )
+  (define (getLast)
+    (car (reverse data))
+  )
+  
+
+  (define (dispatch m)
+    (cond ((equal? m 'addFirst) addFirst)
+          ((equal? m 'addLast) addLast)
+          ((equal? m 'removeFirst) removeFirst)
+          ((equal? m 'removeLast) removeLast)
+          ((equal? m 'getFirst) getFirst)
+          ((equal? m 'getLast) getLast)
+          (else (error "Function not found!" m))))
+  dispatch)
+
+(define d (deque 1 3 5 ))
