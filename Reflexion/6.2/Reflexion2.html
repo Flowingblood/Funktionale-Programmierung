@@ -17,7 +17,7 @@
             Currying
         </h2>
         <p style="font-family:'Verdana'; font-size: large;">
-            Beim Currying wird eine Funktion mit mehrere Argumenten umgewandelt in eine Reihenfolge von Funktionen mit genau einem Argument. Dies wird umgesetzt, indem die Funktion eine Anzahl n Argumente erwartet. Nun wird das Argument n von der Funktion verarbeitet und gibt eine Funktion zurück, welche n-1 Argumente erwartet. Dies wird iterativ so lange ausgeführt, bis keine Argumente mehr erwartet werden.
+            Beim Currying wird eine Funktion mit mehrere Argumenten umgewandelt in eine Reihenfolge von Funktionen mit genau einem Argument. Dies wird umgesetzt, indem die Funktion eine Anzahl n Argumente erwartet. Nun wird das Argument n von der Funktion verarbeitet und gibt eine Funktion zurück, welche n-1 Argumente erwartet. Dies wird iterativ/rekursiv so lange ausgeführt, bis keine Argumente mehr erwartet werden.
         </p>
 		<br>
         <h2 style="font-family:'Verdana'; font-size: xx-large;">
@@ -45,7 +45,7 @@
             Implementation von Compose
         </h2>
 		<p style="font-family:'Verdana'; font-size: large;">
-			In der Applicative-Order werden die Parameter welcher einer Funktion übergeben werden, vor dem Aufruf der Funktion geprüft. Somit läuft die Funktion normal durch, wenn alle Parameter existieren und im richtigen Scope stehen, wenn jedoch ein Parameter fehlerhaft ist, da diese nicht existiert oder nicht im zulässigen Scope steht, kommt es zu einem Fehler.
+			Im folgenden wurde die Compose Funktion einmal in Java und einmal in Racket implementiert. Es wurden zwei Arten implementiert, einmal das ComposeL und einmal das ComposeR. Das R/L geben hierbei die Ausführungsreihenfolge der übergebenen Funktionen an.
         </p>
 		
 		<h4 style="font-family:'Verdana'; font-size: xx-large;">

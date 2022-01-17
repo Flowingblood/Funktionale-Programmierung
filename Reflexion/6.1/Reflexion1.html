@@ -10,24 +10,24 @@
             Was heißt Funktionale Programmierung?
         </h1>
         <p style="font-family:'Verdana'; font-size: large;">
-			Wie der Name schon sagt, wird in der funktionalen Programmierung viel mit Funktionen gearbeitet. Diese können somit meistens als normale Werte benutzt werden. Das heißt das Funktionen weitere Funktionen zurückgeben können und diese auch als Übergabeparameter ente gegen nehmen können, auch Funktionen höherer Ordnung genannt. Es wird versucht in der Funktionalen Programmierung möglichst keine bis wenige „Seiten Effekte“ zu haben. Somit hängt das Ergebnis der Funktionen nur von dem Eingabeparameter ab. Jedoch ein Beispiel dieses Seiten Effektes wäre es eine Datei Lesen oder Schreiben zu dürfen. Der wichtige Bestandteil der funktionalen Programmierung ist, dass Funktionen miteinander verknüpft und verkettet werden können. Das Konzept dieser Programmierung wird von der Mathematik abgeleitet, somit ist f eine Funktion von A nach B. Jedes Element aus der Menge A bildet auf genau ein Element aus der Menge B ab. ( ƒ: A → B )
+			Wie der Name schon sagt, wird in der funktionalen Programmierung viel mit Funktionen gearbeitet. Diese können somit meistens als normale Werte benutzt werden. Das heißt, dass Funktionen weitere Funktionen zurückgeben können und diese auch als Übergabeparameter entgegen nehmen können, auch Funktionen höherer Ordnung genannt. Es wird versucht in der funktionalen Programmierung möglichst keine bis wenige „Seiteneffekte“ zu haben. Somit hängt das Ergebnis der Funktionen nur von dem Eingabeparameter ab. Jedoch ein Beispiel dieses Seiteneffektes wäre es eine Datei lesen oder schreiben zu dürfen. Der wichtige Bestandteil der funktionalen Programmierung ist, dass Funktionen miteinander verknüpft und verkettet werden können. Das Konzept dieser Programmierung wird von der Mathematik abgeleitet, somit ist f eine Funktion von A nach B. Jedes Element aus der Menge A bildet auf genau ein Element aus der Menge B ab. ( ƒ: A → B )
         </p>
 		<br>
         <h2 style="font-family:'Verdana'; font-size: xx-large;">
             Referentielle Transparenz:
         </h2>
         <p style="font-family:'Verdana'; font-size: large;">
-            Die Referentielle Transparenz besagt, dass ein Ausdruck uns dessen Wert mit einem anderen Ausdruck und Wert ersetzt werden kann ohne, dass die Funktionalität der Software geändert wird. Somit (wie oben schon besagt) hat jeder Eingabeparameter genau einen Ausgabeparameter und keine weiteren Seiten Effekte.
+            Die Referentielle Transparenz besagt, dass ein Ausdruck uns dessen Wert mit einem anderen Ausdruck und Wert ersetzt werden kann, ohne dass die Funktionalität der Software geändert wird. Somit (wie oben schon besagt) hat jeder Eingabeparameter genau einen Ausgabeparameter und keine weiteren Seiteneffekte.
         </p>
 		<br>
         <h2 style="font-family:'Verdana'; font-size: xx-large;">
-            Vorteile der Funktionalen Programmierung?
+            Vorteile der funktionalen Programmierung?
         </h2>
 		<p style="font-family:'Verdana'; font-size: large;">
            •	Der geschriebene Source-Code ist einfach zu testen.<br>
 		   •	Der Programmablauf ist einfacher nachzuvollziehen.<br>
            •	Eine zustandlose Programmierung ist einfacher möglich.<br>
-           •	Zu genau einem Eingabewert gibt es einen Ausgabewert.
+           •	Zu genau einem Eingabewert gibt es genau einen Ausgabewert.
 
         </p>
 		<br>
@@ -35,10 +35,10 @@
             Grundlegende Sprachelemente
         </h1>
         <p style="font-family:'Verdana'; font-size: large;">
-			Um die erlernten Sprachkonzepte in Racket in Verknüpfung zum bereits vorhandenen Programmierhorizont zu setzten, werde ich alle Beispiele auch in Java Implementieren.
-			In Racket gibt es wie in den meisten Programmiersprachen logische Sprachelemente wie Bedingte Anweisungen (If-Else), Schleifen (For). Um Daten abzulegen, werden diese in Variablen gespeichert, welche ihren eigenen Scope besitzen. Ein Scope setzt den Sichtbarkeitsbereich einer Variable fest. Somit gibt es globale Variablen, welche in Funktionen und außerhalb von Funktionen verwendet werden können und lokale Variablen, welche nur in einer Funktion gültig sind. In der Abbildung 1 wird die Variable „a“ global definiert. Somit kann diese in der Funktion „f“ verwendet werden und außerhalb der Funktion. Wenn nun die Variable in der Funktion definiert wird, wie in Abbildung 2, schlägt der Code fehl, da die Variable a nur Lokal in der Funktion „f“ erstellt wurde. Somit kann von außerhalb der Funktion nicht auf diese zugegriffen werden.
-			Um in Racket ein Bedingte Anweisung zu implementieren, gibt es zwei Konstrukte, welche verwendet werden können, die If-Funktion und die Cond-Funktion. Der Unterschied ist hierbei, dass die If-Funktion kein Else If darstellen kann und somit immer ein festes If-Else darstellt. Um nur ein If zu implementieren ohne den Else Teil, kann als Else die Void-Funktion aufgerufen werden. Um nun noch ein Else-If einfließen zu lassen, wird Cond genutzt, welche beliebig viele Else If Statements entgegennimmt. In Abbildung 3 werden alle drei Arten der Bedingten Anweisung in Racket implementiert.
-			In Racket gibt es zum Speichern von mehreren Variablen Listen. Diese Listen werden in Racket rekursiv definiert. Somit kann eine Liste entweder Null sein oder ein Paar. Ein Paar hat genau zwei Werte, über welche mit der car- und cdr-Funktion zugegriffen werden kann. Die car-Funktion gibt hierbei das erste und die cdr-Funktion das zweite Element zurück aus dem Paar. Paare sind grundlegend nicht veränderbar. Zu diesen Listen gibt es Elementare Funktionen, über welche die Länge der Liste zurückgegeben werden kann oder einzelne Elemente gelöscht und hinzugefügt werden können. Über diese Listen kann nun iteriert werden mit der For-Schleife. In Abbildung 4 wird eine Liste mit den Elementen „1, 2, 3“ erzeugt und mit der For-Schleife über jedes Element iteriert und dieses in der Konsole ausgegeben.
+			Um die erlernten Sprachkonzepte in Racket in Verknüpfung zum bereits vorhandenen Programmierhorizont zu setzen, werde ich alle Beispiele auch in Java implementieren.
+			In Racket gibt es wie in den meisten Programmiersprachen logische Sprachelemente wie bedingte Anweisungen (If-Else), Schleifen (For). Um Daten abzulegen, werden diese in Variablen gespeichert, welche ihren eigenen Scope besitzen. Ein Scope setzt den Sichtbarkeitsbereich einer Variable fest. Somit gibt es globale Variablen, welche in Funktionen und außerhalb von Funktionen verwendet werden können und lokale Variablen, welche nur in einer Funktion gültig sind. In der Abbildung 1 wird die Variable „a“ global definiert. Somit kann diese in der Funktion „f“ verwendet werden und außerhalb der Funktion. Wenn nun die Variable in der Funktion definiert wird, wie in Abbildung 2, schlägt der Code fehl, da die Variable a nur lokal in der Funktion „f“ erstellt wurde. Somit kann von außerhalb der Funktion nicht auf diese zugegriffen werden.
+			Um in Racket ein bedingte Anweisung zu implementieren, gibt es zwei Konstrukte, welche verwendet werden können, die If-Funktion und die Cond-Funktion. Der Unterschied ist hierbei, dass die If-Funktion kein Else If darstellen kann und somit immer ein festes If-Else darstellt. Um nur ein If zu implementieren ohne den Else Teil, kann als Else die Void-Funktion aufgerufen werden. Um nun noch ein Else-If einfließen zu lassen, wird Cond genutzt, welche beliebig viele Else If Statements entgegennimmt. In Abbildung 3 werden alle drei Arten der bedingten Anweisung in Racket implementiert.
+			In Racket gibt es zum Speichern von mehreren Variablen Listen. Diese Listen werden in Racket rekursiv definiert. Somit kann eine Liste entweder Null sein oder ein Paar. Ein Paar hat genau zwei Werte, über welche mit der car- und cdr-Funktion zugegriffen werden kann. Die car-Funktion gibt hierbei das erste und die cdr-Funktion das zweite Element zurück aus dem Paar. Paare sind grundlegend nicht veränderbar. Zu diesen Listen gibt es elementare Funktionen, über welche die Länge der Liste zurückgegeben werden kann oder einzelne Elemente gelöscht und hinzugefügt werden können. Über diese Listen kann nun iteriert werden mit der For-Schleife. In Abbildung 4 wird eine Liste mit den Elementen „1, 2, 3“ erzeugt und mit der For-Schleife über jedes Element iteriert und dieses in der Konsole ausgegeben.
         </p>
 		<br>
 		<h1 style="font-family:'Verdana'; font-size: xx-large;">

@@ -61,19 +61,29 @@
   (printTreeRec rootNode 0)
 )
 
-
-  
 (define n1 (node 1))
 (define n2 (node 2))
 (define n3 (node 3))
 (define n4 (node 4))
 (define n5 (node 5))
+(define n6 (node 6))
+(define n7 (node 7))
+(define n8 (node 8))
+(define n9 (node 9))
+(define n10 (node 10))
 
 ((n1 'setLeft) n2)
 ((n1 'setRight) n3)
 ((n2 'setLeft) n4)
-((n4 'setRight) n5)
+((n2 'setRight) n5)
+((n3 'setRight) n6)
+((n3 'setLeft) n7)
+((n4 'setRight) n8)
+((n4 'setLeft) n9)
+((n5 'setRight) n10)
 
 
 (printTree n1)
+
+
  
