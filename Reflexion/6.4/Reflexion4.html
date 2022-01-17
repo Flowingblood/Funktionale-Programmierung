@@ -7,41 +7,48 @@
     <body>
 
         <h1 style="font-family:'Verdana'; font-size: xx-large;">
-            Datenstrukturen:
+            Zustände in der Programmierung:
         </h1>
         <p style="font-family:'Verdana'; font-size: large;">
-			In Programmiersprachen gibt es eine große Variation an Datenstrukturen. Im Unterricht haben wir die (Binären)Bäume kennengelernt. Welche in Racket mithilfe von Pairs dargestellt wird. Jedoch gibt es noch viele weitere nutzvolle Datenstrukturen. Racket hat auch weitere Datenstrukturen wie Listen oder auch Warteschlangen (Queues) implementiert. Ich werde im Folgenden die Datenstruktur Deque mit dem bereit erlernten Wissen implementieren. Die Deque ist der Queue und dem Stack sehr ähnlich, denn diese kombiniert diese. Somit können die Daten am Anfang und am Ende gelesen, hinzugefügt und gelöscht werden. Zum temporären Speichern der Daten wird als Hilfe die bereit vorhandene Datenstruktur List genutzt. Um dies in einem objektorientierten Kontext umzusetzen, werden closures und die dispatch Funktion verwendet. Die Implementierung findet einmal in Racket und einmal in Java statt, da Java meine meist genutzte Programmiersprache ist und somit der Aufwand entgegengestellt werden kann.
+			Zustände in der Programmierung oder auch States genannt sind meist Objekte welche Zustandsbasiert Aktionen ausführen. Hierbei wird auch oft von einem Zustandsautomaten (State Machine) aus der theoretischen Informatik gesprochen. Dabei besitzt dieser Automat verschiedene Zustände, welche über einen Zustandsübergang erreicht werden können. Somit wechselt der Automat von einem Zustand in den nächsten. Meist erfolgen diese Zustandsübergänge nach einer Aktion, welche ein Tastendruck oder eine Zeitliche Dauer sind. In der funktionalen Programmierung wird versucht auf diese Zustände aus der imperativen Programmierung zu verzichten, da diese Zustandsänderungen dann Seiteneffekte sind. Jedoch ist es trotzdem möglich Zustände in Racket zu implementieren. Ich werde im folgenden Beispiel eine Ampelsteuerung einmal in Racket und einmal in Java Programmieren. Um den Zuständen in Racket näher zu kommen, werde ich die Library „rebellion/type/enum“ verwenden, welche es möglich macht Enumerationen zu verwenden. Im Folgenden wird ein Modell des Zustandsautomaten verbildlicht.
         </p>
 		<br>
 		<h4 style="font-family:'Verdana'; font-size: xx-large;">
-            Abbildung 1:
+            Zustandsmodell: 
         </h4>
-        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.3/1.png?raw=true">
-		<h4 style="font-family:'Verdana'; font-size: xx-large;">
-            Abbildung 1.1 (Racket):
-        </h4>
-		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.3/1.1.png?raw=true">
+        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.4/1.png?raw=true">
 		<br>
-        <h1 style="font-family:'Verdana'; font-size: xx-large;">
-            Baum Implementation:
-        </h1>
-        <p style="font-family:'Verdana'; font-size: large;">
-            Wir haben im Unterricht eine Art der Implementation von Bäumen in Racket kennengelernt, indem Paare ineinander verschachtelt werden. Mir persönlich hat diese Art der Implementierung nicht gefallen, da diese sehr schnell sehr unübersichtlich wurde, deswegen habe ich eine eigene Art des Baumes in Racket implementiert. Hierbei kann ein Node Objekt initialisiert werden. Diese enthält einen Wert, einen Linken Node und einen Rechten Node. Der Linke und Rechte Node ist standartmäßig leer und kann in der Initialisierung oder später mit Funktionen verändert werden. Man kann alle drei Attribute bearbeiten und erhalten. Somit kann mit dem Node Objekt ein Binärer Baum implementiert werden. Des Weiteren habe ich eine Funktion zu Veranschaulichung des Baumes geschrieben. Diese prüft am Anfang, ob das übergebene Node existiert, wenn ja wird ein rekursiver Aufruf gestartet, welcher das Level um eins erhöht. Daraufhin wird geprüft, dass das übergebene Level nicht null ist. Wenn es nicht null ist, wird eine „Ebene“ in der höhe des levels-1 gezeichnet und der Wert des Nodes mit einem „Arm“. Wenn das Level Null ist, wird einfach nur der Wert des Nodes ausgegeben. Am Ende des If-Statements wird nochmal ein rekursiver Aufruf gestartet nur diesmal mit dem linken Element und wieder mit dem Level+1.
-        </p>
-		<br>
-		<h4 style="font-family:'Verdana'; font-size: xx-large;">
-            Abbildung 2:
-        </h4>
-        <img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.3/2.png?raw=true">
-		<h4 style="font-family:'Verdana'; font-size: xx-large;">
-            Abbildung des Baumes (Eingabe):
-        </h4>
-		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.3/3.png?raw=true">
-		<h4 style="font-family:'Verdana'; font-size: xx-large;">
-            Abbildung des Baumes (Ausgabe):
-        </h4>
-		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.3/3.1.png?raw=true">
 		
+        <h4 style="font-family:'Verdana'; font-size: xx-large;">
+            Ampelsteuerung (Racket Code): 
+        </h4>
+		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.4/2.png?raw=true">
+		<br>
+		<h4 style="font-family:'Verdana'; font-size: xx-large;">
+            Ampelsteuerung (Racket Konsole): 
+        </h4>
+		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.4/2.1.png?raw=true">
+		<br>
+		<h4 style="font-family:'Verdana'; font-size: xx-large;">
+            Ampelsteuerung (Java Code Ampel): 
+        </h4>
+		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.4/3.png?raw=true">
+		<br>
+		<h4 style="font-family:'Verdana'; font-size: xx-large;">
+            Ampelsteuerung (Java Code Ampelsteuerung): 
+        </h4>
+		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.4/3.1.png?raw=true">
+		<br>
+		<h4 style="font-family:'Verdana'; font-size: xx-large;">
+            Ampelsteuerung (Java Code Main): 
+        </h4>
+		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.4/3.2.png?raw=true">
+		<br>
+		<h4 style="font-family:'Verdana'; font-size: xx-large;">
+            Ampelsteuerung (Java Konsole): 
+        </h4>
+		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.4/3.3.png?raw=true">
+		<br>
 		
 
     </body>
