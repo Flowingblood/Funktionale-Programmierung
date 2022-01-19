@@ -2,56 +2,29 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Reflexion 5</title>
+        <title>Reflexion 6</title>
     </head>
     <body>
 
         <h1 style="font-family:'Verdana'; font-size: xx-large;">
-            Ströme:
+            Typsysteme:
         </h1>
         <p style="font-family:'Verdana'; font-size: large;">
-			Ströme sind eine Folge oder Liste von Daten. Sie können eine Unendliche Länge haben, somit ist es möglich unendlich viele Elemente über einen Strom zu bekommen. Für Ströme gibt es spezielle Funktionen, welche auf die Ströme angewendet werden: mal, filter, zip, foldr/l und merge. Sortierfunktionen sind für Ströme nicht geeignet, da die Länge meist nicht bekannt ist. Somit könnte es zum Beispiel einen Strom der natürlichen Zahlen geben. Dieser Strom hat somit unendlich viele Elemente, welche somit unendlich lange sortiert werden müssten. Ein weiterer Nachteil ist es, dass bei einem Strom ein Element nur einmal abgefragt werden kann, da der Strom abgearbeitet wird. Im Folgenden wird ein unendlicher Strom in Racket und in Java implementiert, dieser gibt alle natürlichen Zahlen aus, somit hat dieser kein Ende.
+			In der Programmierung gibt es verschiedene Arten von Typsystemen:
+				1.	Starke / Schwache Typisierung: Der Unterschied zwischen den beiden Typisierungen ist, dass bei der schwachen Typisierung das Typensystem umgangen werden kann. Haskell zum Beispiel ist eine stark typisierte Sprache, da das Typensystem nicht umgangen werden kann. C hingegen ist eine schwach Typisierte Programmiersprache, da jeder Pointertyp in jeden anderen Pointertyp umgewandelt werden kann.
+				2.	Dynamische / Statische Typisierung: Bei der statische Typisierung wird einer Variable ein fester Datentyp zugeordnet. Bei der dynamischen Typisierung kann eine Variable verschiedene Datentypen annehmen. Java ist eine statisch Typisierte Programmiersprache und PHP ist eine dynamisch Typisierte Programmiersprache.
+				3.	Explizite / Implizite Typisierung: Explizite und Implizite Typisierung gibt es nur in der statischem Typisierung.  Bei der Expliziten Typisierung müssen Datentypen ausgeschrieben werden. Im Gegenteil bei der Impliziten Typisierung, hier gibt es meist ein Schlüsselwort, um die Variable zu deklarieren und der Compiler/Interpreter kann dann aus dem Kontext ermitteln um welchen Datentyp es sich handelt.
+				4.	Optionale Typisierung: In der optionalen Typisierung werden die Typannotationen nicht benötigt aber können genutzt werden. Das ist in zum Beispiel Rust, hierbei kann der Typ angegeben werden, muss aber nicht. Es ist rein zur Lesbarkeit und Semantik annotiert.
         </p>
 		<h4 style="font-family:'Verdana'; font-size: xx-large;">
-            Unendlicher Strom von natürlichen Zahlen (Java): 
+            Im folgenden wurde das Spiel Tic-Tac-Toe in einer statisch typisierten Sprache (Java) geschrieben:
         </h4>
-		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.5/1.png?raw=true">
+		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.6/1.png?raw=true">
 		<br>
-		<h4 style="font-family:'Verdana'; font-size: xx-large;">
-            Unendlicher Strom von natürlichen Zahlen (Racket): 
-        </h4>
-		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.5/1.1.png?raw=true">
+		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.6/2.png?raw=true">
 		<br>
-		<h1 style="font-family:'Verdana'; font-size: xx-large;">
-            Anregung zur Reflexion:
-        </h1>
+		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.6/3.png?raw=true">
 		<br>
-		<br>
-		<h1 style="font-family:'Verdana'; font-size: xx-large;">
-            Sind Sie schon einmal unendlichen Datenstrukturen begegnet? Geben Sie Beispiele an:
-        </h1>
-        <p style="font-family:'Verdana'; font-size: large;">
-			Ja ich bin schon unendlichen Datenstrukturen begegnet. In dem Modul Algorithmen und Datenstrukturen hatten wir unendliche Ströme, welche einen Strom aller Quadratzahlen beinhaltet hat. In der funktionalen Programmierung habe ich nun das Prinzip der Lazy-Evaluation erlernt. Hierbei wird Ausdruck nur so weit ausgewertet wie es benötigt wird. Denn wenn der unendliche Strom komplett ausgewertet werden würde, würde dies unendlich lange dauern. Wie oben schon bei der Sortierung beschrieben.
-        </p>
-		<br>
-		<h1 style="font-family:'Verdana'; font-size: xx-large;">
-            Geben Sie Beispiele für Ströme an.
-        </h1>
-        <p style="font-family:'Verdana'; font-size: large;">
-			Da jede Liste in einen Strom umgewandelt werden kann, gibt es hierfür sehr viele Anwendungsfälle. Besonders in Java werden Listen in Ströme umgewandelt, um diese in einer Zeile auszuwerten. Hierbei können filter-Funktionen und Sortierungen vorgenommen werden, das folgende Beispiel zeigt eine Liste mit den Werten „a1, a2, c4, c3, d5“, diese Liste wird gefiltert nach dem Buchstaben „c“, nach den Zahlen Sortiert und am Ende in die Konsole ausgegeben mit einer in-line-For-Schleife.
-        </p>
-		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.5/2.png?raw=true">
-		<br>
-		<h1 style="font-family:'Verdana'; font-size: xx-large;">
-			Falls Sie schon einmal mit Datenströmen gearbeitet haben, erläutern Sie, um welche Anwendung es sich handelte und skizzieren, wie Sie das Problem gelöst haben.
-        </h1>
-        <p style="font-family:'Verdana'; font-size: large;">
-			Ja ich habe schon mit Datenströmen im Android-Umfeld gearbeitet. Hierbei musste ich eine Android-Applikation schreiben, welche über das Bluetooth-Protokoll Nachrichten mit einem zweiten Handy austauschen kann. Hierbei wurden der Data-Output- und der Data-Input-Stream genutzt. Die Streams wurden bei erfolgreichen Verbinden des Bluetooth-Protokolls geöffnet und beim Beenden der Bluetooth-Verbindung geschlossen. In der Zwischenzeit konnten somit beide Handy mithilfe der Streams miteinander kommunizieren. Die Folgende Illustration beschreibt das Verhalten der beiden Handys miteinander
-        </p>
-		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.5/3.png?raw=true">
-		<br>
-		
-		
-
+		<img src="https://github.com/Flowingblood/Funktionale-Programmierung/blob/main/Reflexion/6.6/4.gif?raw=true">
     </body>
 </html>
